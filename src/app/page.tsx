@@ -1,5 +1,4 @@
 // app/page.tsx
-"@typescript-eslint/no-unused-vars"
 "use client";
 
 import { useState } from "react";
@@ -11,11 +10,9 @@ import StoredKeys from "@/components/StoredKeys";
 
 export default function Home() {
   const [currentPublicKey, setCurrentPublicKey] = useState("");
-  const [currentEncryptedSecret, setCurrentEncryptedSecret] = useState("");
 
-  const handleKeyCreated = (publicKey: string, encryptedSecret: string) => {
+  const handleKeyCreated = (publicKey: string) => {
     setCurrentPublicKey(publicKey);
-    setCurrentEncryptedSecret(encryptedSecret);
   };
 
   return (
