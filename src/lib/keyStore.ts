@@ -34,9 +34,9 @@ export function encryptData(data: string, password: string): string {
 
 // refazer a lógica dos dados de entrada
 export function decryptData(data: string, password: string): string {
-	console.log(`Received data for decryption: ${data}`);
+	//console.log(`Received data for decryption: ${data}`);
 	const parts = data.split(':');
-	console.log(`Split data into parts: ${parts}`);
+	//console.log(`Split data into parts: ${parts}`);
 	
 	if (parts.length !== 2) {
 	  throw new Error('Formato de dados inválido. Esperado: iv:encryptedData');
@@ -54,5 +54,6 @@ export function decryptData(data: string, password: string): string {
 	const decipher = crypto.createDecipheriv('aes-128-cbc', key, iv);
 	let decrypted = decipher.update(encryptedData, 'hex', 'utf8');
 	decrypted += decipher.final('utf8');
+	//console.log(`Decrypted data: ${decrypted}`);
 	return decrypted;
   }
